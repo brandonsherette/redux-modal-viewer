@@ -1,0 +1,11 @@
+.loading-wrapper {
+  position: relative;
+  padding: 15px;
+
+  .loading {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 0%);
+  }
+}
