@@ -18,7 +18,7 @@ class AppComponent extends Component {
         </div>
         <div className="container">
           <h1>Modal Examples</h1>
-          <div className="break-4x">
+          <div className="break-4x btn-group" role="group">
             <button onClick={handleOpenWelcomeModal} type="button" className="btn btn-primary">Open Welcome Modal</button>
             <button onClick={handleOpenAboutModal} type="button" className="btn btn-primary">Open About Modal</button>
           </div>
@@ -34,8 +34,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleOpenAboutModal: () => { dispatch(openModal('about')) },
-    handleOpenWelcomeModal: () => { dispatch(openModal('welcome')) }
+    handleOpenAboutModal: () => { dispatch(openModal('About')) },
+    handleOpenWelcomeModal: () => { dispatch(openModal('Welcome')) }
   };
 };
 

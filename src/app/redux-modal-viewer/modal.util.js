@@ -36,10 +36,7 @@ function combineModals(modals) {
     };
   }
 
-  console.debug('formattedModals', formattedModals);
-
-  this.configs = Object.assign({}, this._modals, formattedModals);
-  console.debug('configs', this._modals);
+  this._modals = Object.assign({}, this._modals, formattedModals);
 };
 
 /**

@@ -30,11 +30,7 @@ module.exports = {
           }, {
             loader: 'resolve-url-loader'
           }, {
-            loader: 'sass-loader',
-            options: {
-              includePaths: ['src/styles/scss/abstract/'],
-              url: false
-            }
+            loader: 'sass-loader'
           }]
       },
       {
