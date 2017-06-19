@@ -3,5 +3,5 @@
 ## Description
 Master control for react redux modals. Utilizes react-bootstrap for modal creation.
 ## Versions
-**v0.0.1**
+**v0.0.1-rc1**
 - Initial Setup
