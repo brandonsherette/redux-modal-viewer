@@ -1,6 +1,6 @@
 {
   "name": "redux-modal-viewer",
-  "version": "0.0.1-rc1",
+  "version": "0.0.1-rc2",
   "description": "Redux Modal Viewer",
   "main": "dist/redux-modal-viewer.js",
   "scripts": {
@@ -16,13 +16,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.10",
-    "react": "^15.6.1",
-    "react-addons-css-transition-group": "^15.4.2",
-    "react-bootstrap": "^0.31.0",
-    "react-dom": "^15.6.1",
-    "react-redux": "^5.0.5",
-    "redux": "^3.6.0",
-    "redux-logger": "^3.0.6"
+    "react-addons-css-transition-group": "^15.4.2"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",
@@ -35,6 +29,12 @@
     "file-loader": "^0.10.0",
     "gulp": "^3.9.1",
     "node-sass": "^4.5.0",
+    "react": "^15.6.1",
+    "react-bootstrap": "^0.31.0",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.5",
+    "redux": "^3.6.0",
+    "redux-logger": "^3.0.6",
     "redux-form": "^6.8.0",
     "redux-form-ext": "git+https://github.com/brandonsherette/redux-form-ext.git",
     "redux-thunk": "^2.2.0",
