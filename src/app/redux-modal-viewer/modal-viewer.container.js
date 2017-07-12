@@ -7,8 +7,8 @@ require('./modal-viewer.scss');
 
 const ModalViewer = ({openModals, onHide}) => (
   <div className="modal-wrapper absolute">
-    { openModals.map((modal) => { 
-      return (<modal.component key={'modal-' + modal.slug} show={true} onHide={() => {onHide(modal)}} />);
+    { openModals.map((modalConfig) => { 
+      return (<modalConfig.modal.component {...modalConfig.props} key={'modal-' + modalConfig.modal.slug} show={true} onHide={() => {onHide(modalConfig.modal)}} />);
     })}
   </div>
 );

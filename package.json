@@ -1,6 +1,6 @@
 {
   "name": "redux-modal-viewer",
-  "version": "0.0.1-rc2",
+  "version": "0.1.0-rc1",
   "description": "Redux Modal Viewer",
   "main": "dist/redux-modal-viewer.js",
   "scripts": {

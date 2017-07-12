@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { ModalViewer, openModal } from './redux-modal-viewer/index';
+import { closeModal, ModalViewer, openModal } from './redux-modal-viewer/index';
 
 // combine modals 
 import modalConfig from './modal.config';
 
 class AppComponent extends Component {
   render() {
-    const { handleOpenAboutModal, handleOpenRegisterModal, handleOpenWelcomeModal } = this.props;
+    const { 
+      handleOpenAboutModal, 
+      handleOpenConfirmModal, 
+      handleOpenRegisterModal, 
+      handleOpenWelcomeModal,
+      handleOpenMultipleModals,
+    } = this.props;
 
     return (
       <div className="app-component">
@@ -22,6 +28,8 @@ class AppComponent extends Component {
             <button onClick={handleOpenWelcomeModal} type="button" className="btn btn-primary">Open Welcome Modal</button>
             <button onClick={handleOpenAboutModal} type="button" className="btn btn-primary">Open About Modal</button>
             <button onClick={handleOpenRegisterModal} type="button" className="btn btn-primary">Open Register Modal</button>
+            <button onClick={handleOpenConfirmModal} type="button" className="btn btn-primary">Open Confirm Modal</button>
+            <button onClick={handleOpenMultipleModals} type="button" className="btn btn-primary">Open Multiple Modals</button>
           </div>
         </div>
       </div>
@@ -37,8 +45,22 @@ const mapDispatchToProps = (dispatch) => {
   return {
     handleOpenAboutModal: () => { dispatch(openModal('about')) },
     handleOpenRegisterModal: () => { dispatch(openModal('register')) },
-    handleOpenWelcomeModal: () => { dispatch(openModal('welcome')) }
+    handleOpenWelcomeModal: () => { dispatch(openModal('welcome')) },
+    handleOpenConfirmModal: () => { dispatch(openModal('ModalConfirm', getConfirmModalProps(dispatch))) },
+    handleOpenMultipleModals: () => { dispatch(openModal('welcome')); dispatch(openModal('register')); dispatch(openModal('ModalConfirm', getConfirmModalProps(dispatch))); },
   };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppComponent);
+
+function getConfirmModalProps(dispatch) {
+  return {
+    body: (<h1>Are You Sure?</h1>),
+    cancelLabel: 'Close',
+    confirmLabel: 'Indeed',
+    handleCancel: () => { console.debug('Cancel Was Triggered!'); dispatch(closeModal('ModalConfirm')) },
+    handleConfirm: () => { console.debug('Confirm Was Triggered!'); dispatch(closeModal('ModalConfirm')) },
+    isCancelHidden: false,
+    title: 'Confirm Registration'
+  };
+}

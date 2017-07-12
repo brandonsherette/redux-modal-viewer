@@ -1,6 +1,8 @@
 $color-dark-grey: #3D3D3D;
 $color-bootstrap-primary: #337ab7;
 $color-white: #ffffff;
+$color-warning-light: #fcf8e3;
+$color-warning-dark: #8a6d3b; 
 
 .modal-center.modal.in .modal-dialog {
   position: fixed;
@@ -24,6 +26,10 @@ $color-white: #ffffff;
 }
 
 .modal {
+  .modal-confirm__body {
+    text-align: center;
+  }
+
   a {
     color: $color-dark-grey;
   }
@@ -74,7 +80,8 @@ $color-white: #ffffff;
       height: 46px;
     }
   }
-  .modal-header.warning {
+  .modal-header.warning,
+  .modal-header.modal-header-warning {
     /* bootstrap warning color scheme */
     color: #8a6d3b;
     background-color: #fcf8e3;
@@ -82,6 +89,7 @@ $color-white: #ffffff;
     h4 {
       color: #8a6d3b;
     }
+    text-align: center;
   }
   .modal-header {
     color: $color-white;

@@ -8,7 +8,7 @@ const ActionTypes = {
 
 export default ActionTypes;
 
-export const openModal = (id) => {
+export const openModal = (id, props = null) => {
   // check if modal is viable 
   const modal = ModalUtil.getModal(id);
 
@@ -18,7 +18,10 @@ export const openModal = (id) => {
 
   return {
     type: ActionTypes.MODAL_VIEWER_OPEN_MODAL,
-    payload: modal
+    payload: {
+      modal,
+      props
+    }
   };
 };
 

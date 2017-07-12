@@ -23,7 +23,7 @@ export default function reducer(state = initialState, action) {
 
       // find index of modal to close 
       const modalIndex = openModals.findIndex((config) => {
-        return (config.slug === action.payload.slug);
+        return (config.modal.slug === action.payload.slug);
       });
 
       if (modalIndex === -1) {
