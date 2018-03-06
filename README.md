@@ -156,9 +156,9 @@ export default (mapStateToProps, mapDispatchToProps)(AppContainer);
   - closes all modals that are currently opened.
 
 # Action Types
-MODAL_VIEWER_OPEN_MODAL: 'MODAL_VIEWER_OPEN_MODAL',
-MODAL_VIEWER_CLOSE_MODAL: 'MODAL_VIEWER_CLOSE_MODAL',
-MODAL_VIEWER_CLOSE_ALL_MODALS: 'MODAL_VIEWER_CLOSE_ALL_MODALS'
+- **MODAL_VIEWER_OPEN_MODAL**
+- **MODAL_VIEWER_CLOSE_MODAL**
+- **MODAL_VIEWER_CLOSE_ALL_MODALS**
 
 # ModalUtil
 ## Import
