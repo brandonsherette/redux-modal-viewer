@@ -50,7 +50,7 @@ function combineModals(modals) {
  * 
  * @method getModal 
  * @param {Object|String} modal the modal configuration or id of the modal config to search for. The is the value you specified in modals.config.js from the combineConfigs was used.
- * @return {Object|null} the found configuration found.
+ * @returns {Object} the found configuration found.
  */
 function getModal(modal) {
   const checkByObject = (mModal) => { return (modal.id === mModal.id); };

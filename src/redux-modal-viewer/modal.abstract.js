@@ -2,11 +2,20 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Modal } from 'react-bootstrap';
 
+/**
+ * Abstract class for all modals in the ModalViewer.
+ * @class ModalAbstract
+ */
 class ModalAbstract extends Component {
   constructor(props) {
     super(props);
   }
 
+  /**
+   * @method getDefaultModalProps
+   * @private
+   * @return {Object} the default modal props.
+   */
   getDefaultModalProps() {
     return {
       modalProps: {
@@ -25,14 +34,24 @@ class ModalAbstract extends Component {
     };
   }
 
+  /**
+   * Overrides/Merges any default modal props.
+   * @method getModalProps
+   * @return {Object|null} the custom modal props.
+   */
   getModalProps() {
     return null;
   }
 
+  /**
+   * Combines getDefaultModalProps and getModalProps together.
+   * @method combineModalProps
+   * @return {Object} the combined mocal props
+   */
   combineModalProps() {
     return Object.assign({}, this.getDefaultModalProps(), this.getModalProps());
   }
-
+  
   render() {
     const { modalProps, headerProps, titleProps, bodyProps, footerProps, headerProps: {displayHeader} } = this.combineModalProps();
     const { show, onHide } = this.props;

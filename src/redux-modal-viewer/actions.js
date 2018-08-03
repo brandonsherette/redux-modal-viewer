@@ -1,5 +1,8 @@
 import ModalUtil from './modal.util';
 
+/**
+ * @var ActionTypes The action types available for any modal viewer actions.
+ */
 const ActionTypes = {
   MODAL_VIEWER_OPEN_MODAL: 'MODAL_VIEWER_OPEN_MODAL',
   MODAL_VIEWER_CLOSE_MODAL: 'MODAL_VIEWER_CLOSE_MODAL',
@@ -8,6 +11,13 @@ const ActionTypes = {
 
 export default ActionTypes;
 
+/**
+ * Opens the specified modal.
+ * @method openModal
+ * @param {string} id the modal id used in your modal config file. 
+ * @param {any} props any props you want to send to the modal.
+ * @return {Object} the action creator object.
+ */
 export const openModal = (id, props = null) => {
   // check if modal is viable 
   const modal = ModalUtil.getModal(id);
@@ -25,6 +35,12 @@ export const openModal = (id, props = null) => {
   };
 };
 
+/**
+ * Closes the specified modal.
+ * @method closeModal
+ * @param {string} id the id of the modal to close (the value in the your modal config file).
+ * @return {Object} the action creator object.
+ */
 export const closeModal = (id) => {
   // check if modal is viable 
   const modal = ModalUtil.getModal(id);
@@ -39,6 +55,11 @@ export const closeModal = (id) => {
   };
 };
 
+/**
+ * Closes all modals that are currently open.
+ * @method closeAllModals
+ * @return {Object} the action creator object.
+ */
 export const closeAllModals = () => {
   return {
     type: ActionTypes.MODAL_VIEWER_CLOSE_ALL_MODALS

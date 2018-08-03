@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ModalAbstract from './modal.abstract';
 
+/**
+ * Confirmation modal that is used if you want the user to confirm an action.
+ * @class ModalConfirm
+ */
 class ModalConfirm extends ModalAbstract {
   getModalProps() {
     return {
