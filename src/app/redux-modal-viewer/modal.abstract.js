@@ -15,6 +15,7 @@ class ModalAbstract extends Component {
       },
       headerProps: {
         closeButton: true,
+        displayHeader: true
       },
       titleProps: {
         componentClass: 'div'
@@ -33,15 +34,15 @@ class ModalAbstract extends Component {
   }
 
   render() {
-    const { modalProps, headerProps, titleProps, bodyProps, footerProps } = this.combineModalProps();
+    const { modalProps, headerProps, titleProps, bodyProps, footerProps, headerProps: {displayHeader} } = this.combineModalProps();
     const { show, onHide } = this.props;
     const footer = this.renderFooter();
 
     return (
       <Modal {...modalProps} show={show} onHide={onHide}>
-        <Modal.Header {...headerProps}>
+        {displayHeader && <Modal.Header {...headerProps}>
           <Modal.Title {...titleProps}>{this.renderTitle() }</Modal.Title>
-        </Modal.Header>
+        </Modal.Header>}
         <Modal.Body {...bodyProps}>{this.renderBody() }</Modal.Body>
         {footer && (<Modal.Footer {...footerProps}>{footer}</Modal.Footer>)}
       </Modal>
