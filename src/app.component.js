@@ -10,7 +10,7 @@ class AppComponent extends Component {
     const { 
       handleOpenAboutModal, 
       handleOpenConfirmModal, 
-      handleOpenRegisterModal, 
+      handleOpenNoHeaderModal,
       handleOpenWelcomeModal,
       handleOpenMultipleModals,
     } = this.props;
@@ -27,8 +27,8 @@ class AppComponent extends Component {
           <div className="break-4x btn-group" role="group">
             <button onClick={handleOpenWelcomeModal} type="button" className="btn btn-primary">Open Welcome Modal</button>
             <button onClick={handleOpenAboutModal} type="button" className="btn btn-primary">Open About Modal</button>
-            <button onClick={handleOpenRegisterModal} type="button" className="btn btn-primary">Open Register Modal</button>
             <button onClick={handleOpenConfirmModal} type="button" className="btn btn-primary">Open Confirm Modal</button>
+            <button onClick={handleOpenNoHeaderModal} type="button" className="btn btn-primary">Open No Header Modal</button>
             <button onClick={handleOpenMultipleModals} type="button" className="btn btn-primary">Open Multiple Modals</button>
           </div>
         </div>
@@ -44,10 +44,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     handleOpenAboutModal: () => { dispatch(openModal('about')) },
-    handleOpenRegisterModal: () => { dispatch(openModal('register')) },
     handleOpenWelcomeModal: () => { dispatch(openModal('welcome')) },
+    handleOpenNoHeaderModal: () => { dispatch(openModal('ModalNoHeader'))},
     handleOpenConfirmModal: () => { dispatch(openModal('ModalConfirm', getConfirmModalProps(dispatch))) },
-    handleOpenMultipleModals: () => { dispatch(openModal('welcome')); dispatch(openModal('register')); dispatch(openModal('ModalConfirm', getConfirmModalProps(dispatch))); },
+    handleOpenMultipleModals: () => { dispatch(openModal('welcome')); dispatch(openModal('about')); dispatch(openModal('ModalConfirm', getConfirmModalProps(dispatch))); },
   };
 };
 

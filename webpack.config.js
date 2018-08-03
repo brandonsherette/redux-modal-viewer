@@ -3,7 +3,7 @@ var path = require('path');
 module.exports = {
   context: path.join(__dirname, "src"),
   devtool: "inline-sourcemap",
-  entry: "./app/app.js",
+  entry: "./index.js",
   module: {
     loaders: [
       {
@@ -43,8 +43,8 @@ module.exports = {
     ]
   },
   output: {
-    path: __dirname + "/src/",
-    filename: "app.min.js"
+    path: __dirname + "/public/",
+    filename: "main.js"
   },
   plugins: []
 };

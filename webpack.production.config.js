@@ -5,7 +5,7 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: './src/app/' + config.libraryName + '/index.js',
+  entry: './src/' + config.libraryName + '/index.js',
   devtool: false,
   output: {
     path: __dirname + '/dist',
@@ -33,12 +33,6 @@ module.exports = {
       commonjs: 'react',
       amd: 'react',
     },
-    'react-addons-css-transition-group': {
-      root: 'react-addons-css-transition-group',
-      commonjs2: 'react-addons-css-transition-group',
-      commonjs: 'react-addons-css-transition-group',
-      amd: 'react-addons-css-transition-group',
-    },
     'react-bootstrap': {
       root: 'react-bootstrap',
       commonjs2: 'react-bootstrap',
@@ -62,13 +56,7 @@ module.exports = {
       commonjs2: 'redux',
       commonjs: 'redux',
       amd: 'redux'
-    },
-    'redux-logger': {
-      root: 'logger',
-      commonjs2: 'redux-logger',
-      commonjs: 'redux-logger',
-      amd: 'redux-logger',
-    },
+    }
   },
   module: {
     loaders: [

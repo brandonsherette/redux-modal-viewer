@@ -1,3 +1,7 @@
+# v0.2.0
+## Updates
+- Added optional headerProp: displayHeader, to allow for hiding modal header.
+
 # v0.1.0-rc1
 - Modals can now have props sent to them.
 - Added ModalConfirm component.

@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { connect }  from 'react-redux';
 import { closeModal } from './actions';
 
-require('./modal-viewer.scss');
-
 const ModalViewer = ({openModals, onHide}) => (
   <div className="modal-wrapper absolute">
     { openModals.map((modalConfig) => { 

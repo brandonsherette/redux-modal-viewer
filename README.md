@@ -61,7 +61,13 @@ class ModalWelcome extends ModalAbstract {
       modalProps: {
         bsSize: null,
         backdrop: 'static'
+      },
+      headerProps: {
+        displayHeader: false, // default true
       }
+    };
+  }
+
     };
   }
 
